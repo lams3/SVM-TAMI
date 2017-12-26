@@ -57,7 +57,7 @@ Tentativa de agrupar os pontos de fuga
 
 Encontro de pontos de fuga bem sucedido. Apesar de não estar visível na imagem, tambem foi encontrado um ponto de fuga no infinito.
 
-![Marromeno](imgs/semisuccess.png)
+![Marromeno](imgs/semisucces.png)
 
 Encontro de pontos de fuga parcialmente bem sucedido. Dois pontos calculados corretamente e um falso positivo
 
