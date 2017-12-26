@@ -27,11 +27,40 @@ A disposição inicial do grid na imagem segue a numeração da imagem. Quando a
 
 Deve-se observar que, quanto maior a deformação projetiva em uma dada direção, temos menos acurácia na medição. Como por exemplo:
 
-![Baixa Acurácia](prints/print1.PNG)
+![Baixa Acurácia](prints/print1.PNG),
+
 Neste exemplo, o cubo medido tem 20x20x20cm
 
 ![Bom resultado](prints/print2.PNG)
+
 Neste exemplo, o baú tem 28x28x55cm
 
 Arquivos de exemplo são fornecidos na pasta testes.
 
+## Dificuldades Encontradas
+### Detecção de Pontos de Fuga
+Utilizamos o OpenCV para realizar uma detecção de arestas e inferir os pontos de fuga
+* Grande número de outliers
+    * Arestas que não são arestas de fato
+    * Arestas que não pertencem aos eixos desejados
+* Alta sensibilidade a parâmetros
+
+Fizemos uso do método RANSAC para encontrar os pontos de fuga
+* Grande número de outliers resulta em falsos positivos
+* Aumento na quantidade de amostras diminui drasticamente o desempenho do programa
+
+Tentativa de agrupar os pontos de fuga
+* Pontos visíveis, usamos distância euclidiana para encontrar um ponto médio
+* Pontos no infinito, usamos distância angular
+
+## Em Desenvolvimento
+### Detecção de Pontos de Fuga
+Fazer um ajuste automático nos métodos do OpenCV que detectam arestas ou realizar uma outra abordagem para encontrar os pontos de fuga automaticamente
+### Erros de Medidas
+* Cálculo das incertezas associadas a cada medida
+* Permitir que o usuário entre com mais de uma medida de referência para aumentar a precisão
+### Medições entre Planos
+* Cálculo de proporções entre diferentes planos
+### Detecção Automática de Objetos
+* Detecção de objetos de referência
+* Medidas já conhecidas, diminui a entrada do usuário
