@@ -23,7 +23,7 @@ Os eixos X e Y formam o plano de referência para medidas na direção de Z. De 
 
 A disposição inicial do grid na imagem segue a numeração da imagem. Quando a imagem é carregada, os grids são dispostos nos cantos superior e inferior esquerdo, e podem ser posicionados com o mouse.
 
-![Grid](prints/grid.png)
+![Grid](imgs/grid.png)
 
 Deve-se observar que, quanto maior a deformação projetiva em uma dada direção, temos menos acurácia na medição. Como por exemplo:
 
@@ -52,6 +52,18 @@ Fizemos uso do método RANSAC para encontrar os pontos de fuga
 Tentativa de agrupar os pontos de fuga
 * Pontos visíveis, usamos distância euclidiana para encontrar um ponto médio
 * Pontos no infinito, usamos distância angular
+
+![Sucesso](imgs/success.png)
+
+Encontro de pontos de fuga bem sucedido. Apesar de não estar visível na imagem, tambem foi encontrado um ponto de fuga no infinito.
+
+![Marromeno](imgs/semisuccess.png)
+
+Encontro de pontos de fuga parcialmente bem sucedido. Dois pontos calculados corretamente e um falso positivo
+
+![Ruim](imgs/failure.png)
+
+Falha total em encontrar os pontos de fuga, com um deles fora da imagem.
 
 ## Em Desenvolvimento
 ### Detecção de Pontos de Fuga
