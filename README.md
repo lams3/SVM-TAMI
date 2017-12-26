@@ -23,12 +23,15 @@ Os eixos X e Y formam o plano de referência para medidas na direção de Z. De 
 
 A disposição inicial do grid na imagem segue a numeração da imagem. Quando a imagem é carregada, os grids são dispostos nos cantos superior e inferior esquerdo, e podem ser posicionados com o mouse.
 
-![Grid](prints/grid.PNG)
+![Grid](prints/grid.png)
 
 Deve-se observar que, quanto maior a deformação projetiva em uma dada direção, temos menos acurácia na medição. Como por exemplo:
 
 ![Baixa Acurácia](prints/print1.PNG)
+Neste exemplo, o cubo medido tem 20x20x20cm
 
+![Bom resultado](prints/print2.PNG)
+Neste exemplo, o baú tem 28x28x55cm
 
 Arquivos de exemplo são fornecidos na pasta testes.
 
